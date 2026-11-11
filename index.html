@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irina & Dmitry | Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --wine: #571522;
+  --burgundy: #781e32;
+  --red: #963c4b;
+  --cream: #f7f1eb;
+  --gold: #b69a79;
+  --text: #3c2528;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 300;
+}
+
+button, input, select, textarea { font: inherit; }
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(rgba(35,12,16,.25), rgba(35,12,16,.60)),
+    url('hero.jpg') center 42% / cover no-repeat;
+}
+
+.hero-content { padding: 30px 20px; }
+
+.eyebrow {
+  letter-spacing: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(65px, 12vw, 125px);
+  font-weight: 400;
+  line-height: .95;
+  margin: 35px 0 25px;
+}
+
+.hero h1 span {
+  display: block;
+  font-style: italic;
+  font-size: .65em;
+  margin: 12px 0;
+}
+
+.hero-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  letter-spacing: 4px;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 35px;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.music {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
+  border: 1px solid rgba(255,255,255,.5);
+  color: white;
+  background: rgba(55,15,25,.65);
+  padding: 12px 17px;
+  border-radius: 30px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+section {
+  padding: 100px 22px;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-label {
+  color: var(--burgundy);
+  font-size: 10px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 7vw, 65px);
+  font-weight: 400;
+  color: var(--wine);
+  margin-bottom: 25px;
+}
+
+h2 em { font-weight: 400; }
+
+.description {
+  max-width: 580px;
+  margin: auto;
+  line-height: 2;
+  font-size: 14px;
+}
+
+.flower {
+  font-size: 30px;
+  color: var(--burgundy);
+  margin: 30px 0;
+}
+
+.dark-section {
+  background: var(--wine);
+  color: var(--cream);
+}
+
+.dark-section h2,
+.dark-section .section-label {
+  color: #f5e6dc;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: clamp(15px, 5vw, 55px);
+  margin-top: 45px;
+}
+
+.countdown div { min-width: 55px; }
+
+.countdown strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 400;
+}
+
+.countdown span {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.schedule {
+  margin: 55px auto 0;
+  max-width: 540px;
+  text-align: left;
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 25px;
+  padding: 25px 0;
+  border-bottom: 1px solid #d9c8be;
+}
+
+.event-time {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+  color: var(--burgundy);
+}
+
+.event h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.event p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #8b7770;
+}
+
+.photo-section {
+  min-height: 500px;
+  background:
+    linear-gradient(rgba(48,12,21,.15), rgba(48,12,21,.4)),
+    url('hero.jpg') center / cover no-repeat;
+}
+
+.dress-palette {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 40px 0;
+}
+
+.swatch {
+  width: 75px;
+  height: 100px;
+  border-radius: 50px 50px 5px 5px;
+  box-shadow: 0 5px 18px #00000012;
+}
+
+.swatch-label {
+  font-size: 10px;
+  margin-top: 9px;
+}
+
+.dress-note {
+  font-size: 13px;
+  line-height: 2;
+  max-width: 550px;
+  margin: auto;
+}
+
+.music-section {
+  background: #eee4dc;
+}
+
+.music-options {
+  max-width: 470px;
+  margin: 35px auto;
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.music-options label {
+  border: 1px solid #cdb9ad;
+  padding: 17px 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.music-options label:has(input:checked) {
+  background: var(--wine);
+  color: white;
+}
+
+.music-options input { margin-right: 10px; }
+
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #d3c1b6;
+  background: transparent;
+  outline: none;
+  color: var(--text);
+  margin-top: 12px;
+}
+
+textarea { resize: vertical; min-height: 90px; }
+
+.rsvp-form {
+  max-width: 480px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.rsvp-form label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.submit {
+  display: block;
+  width: 100%;
+  padding: 19px;
+  margin-top: 30px;
+  background: var(--wine);
+  color: white;
+  border: 1px solid var(--wine);
+  letter-spacing: 3px;
+  font-size: 10px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.submit:hover {
+  background: transparent;
+  color: var(--wine);
+}
+
+footer {
+  padding: 70px 20px;
+  background: #321018;
+  color: #f4e8df;
+  text-align: center;
+}
+
+footer h2 {
+  color: #f4e8df;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+footer p {
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+@media(max-width:600px) {
+  section { padding: 75px 20px; }
+  .event { grid-template-columns: 65px 1fr; gap: 12px; }
+  .event-time { font-size: 23px; }
+  .swatch { width: 58px; height: 80px; }
+}
+</style>
+</head>
+
+<body>
+
+<button class="music" id="musicBtn">♫ Включить музыку</button>
+<audio id="bgMusic" loop src="music.mp3"></audio>
+
+<!-- ГЛАВНАЯ -->
+
+<header class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">Приглашение на свадьбу</p>
+    <h1>
+      Irina
+      <span>&</span>
+      Dmitry
+    </h1>
+    <p class="hero-date">20 · 06 · 2027</p>
+  </div>
+  <div class="hero-bottom">НАША ИСТОРИЯ ЛЮБВИ</div>
+</header>
+
+<!-- ПРИГЛАШЕНИЕ -->
+
+<section>
+  <div class="container">
+    <p class="section-label">The beginning of forever</p>
+    <h2>Дорогие наши<br><em>родные и близкие!</em></h2>
+    <div class="flower">❦</div>
+    <p class="description">
+      Есть моменты, которые хочется остановить,
+      чувства, которыми хочется делиться,
+      и люди, без которых невозможно представить
+      самые счастливые мгновения.
+
+      <br><br>
+      Мы решили соединить наши сердца и создать
+      одну общую историю — историю нашей семьи.
+
+      <br><br>
+      И с огромной любовью приглашаем вас
+      разделить с нами этот особенный день.
+      Будем счастливы видеть вас рядом!
+    </p>
+  </div>
+</section>
+
+<!-- ОБРАТНЫЙ ОТСЧЕТ -->
+
+<section class="dark-section">
+  <div class="container">
+    <p class="section-label">Save the date</p>
+    <h2>До нашей встречи</h2>
+    <p style="font-size:12px;letter-spacing:3px">
+      20 ИЮНЯ 2027
+    </p>
+
+    <div class="countdown">
+      <div><strong id="days">000</strong><span>Дней</span></div>
+      <div><strong id="hours">00</strong><span>Часов</span></div>
+      <div><strong id="minutes">00</strong><span>Минут</span></div>
+      <div><strong id="seconds">00</strong><span>Секунд</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="gallery-section reveal">
+  <div class="container">
+    <p class="section-label">Our memories</p>
+    <h2>Мгновения <em>счастья</em></h2>
+
+    <p class="description">
+      Немного нашей истории в фотографиях.
+    </p>
+
+    <div class="gallery">
+      <img src="assets/gallery-1.jpg"
+           alt="Романтический момент">
+      <img src="assets/gallery-2.jpg"
+           alt="Цветы и любовь">
+      <img src="assets/gallery-3.jpg"
+           alt="Наша история">
+    </div>
+
+    <p class="gallery-caption">
+      EVERY LOVE STORY IS BEAUTIFUL ♡
+    </p>
+  </div>
+</section>
+
+
+<!-- ПРОГРАММА -->
+
+<section>
+  <div class="container">
+    <p class="section-label">Wedding day</p>
+    <h2>План нашего дня</h2>
+    <p class="description">
+      Каждая минута этого дня станет частью
+      нашей общей истории.
+    </p>
+
+    <div class="schedule">
+      <div class="event">
+        <div class="event-time">15:00</div>
+        <div>
+          <h3>Встреча гостей</h3>
+          <p>Объятия, улыбки и первые бокалы за любовь.</p>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-time">16:00</div>
+        <div>
+          <h3>Церемония</h3>
+          <p>Самое важное «Да» в нашей жизни.</p>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-time">17:00</div>
+        <div>
+          <h3>Праздничный ужин</h3>
+          <p>Вкусные блюда, тёплые слова и тосты.</p>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-time">19:00</div>
+        <div>
+          <h3>Танцы и веселье</h3>
+          <p>Музыка, эмоции и незабываемые моменты.</p>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-time">22:00</div>
+        <div>
+          <h3>Финал вечера</h3>
+          <p>Пусть этот день останется в сердце навсегда.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="location-section reveal">
+  <div class="container">
+    <p class="section-label">Where we meet</p>
+    <h2>Место, где начнётся<br><em>новая глава</em></h2>
+
+    <div class="location-card">
+      <div class="location-flower">❦</div>
+
+      <h3>Название площадки</h3>
+
+      <p>
+        Город, улица и номер дома
+      </p>
+
+      <p class="location-time">
+        20 ИЮНЯ · 15:00
+      </p>
+
+      <a href="https://maps.google.com/"
+         target="_blank"
+         class="map-link">
+        ПОСМОТРЕТЬ НА КАРТЕ ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ДРЕСС-КОД -->
+
+<section class="dark-section">
+  <div class="container">
+    <p class="section-label">Dress code</p>
+    <h2>Цвет нашей любви</h2>
+    <p class="description">
+      Нам будет особенно приятно, если в ваших
+      образах появятся оттенки нашей свадебной палитры.
+      Выбирайте элегантные и торжественные образы.
+    </p>
+
+    <div class="dress-palette">
+      <div>
+        <div class="swatch" style="background:#571522"></div>
+        <p class="swatch-label">Wine</p>
+      </div>
+      <div>
+        <div class="swatch" style="background:#853345"></div>
+        <p class="swatch-label">Burgundy</p>
+      </div>
+      <div>
+        <div class="swatch" style="background:#a56c70"></div>
+        <p class="swatch-label">Dusty rose</p>
+      </div>
+      <div>
+        <div class="swatch" style="background:#c6a99b"></div>
+        <p class="swatch-label">Mauve</p>
+      </div>
+      <div>
+        <div class="swatch" style="background:#e8d9cc"></div>
+        <p class="swatch-label">Champagne</p>
+      </div>
+    </div>
+
+    <p class="dress-note">
+      Просим воздержаться от полностью белых
+      и слишком ярких неоновых образов.
+      Главное — ваш комфорт и хорошее настроение!
+    </p>
+  </div>
+</section>
+
+<!-- МУЗЫКА -->
+
+<section class="music-section">
+  <div class="container">
+    <p class="section-label">Our soundtrack</p>
+    <h2>Музыка любви</h2>
+    <p class="description">
+      У каждого есть песня, под которую хочется
+      танцевать, улыбаться или влюбляться.
+      Поделитесь своей любимой композицией —
+      возможно, именно она прозвучит на нашем вечере.
+    </p>
+
+    <div class="music-options">
+      <label>
+        <input type="radio" name="music" value="Романтическая">
+        Романтическая и нежная
+      </label>
+      <label>
+        <input type="radio" name="music" value="Зажигательная">
+        Зажигательная и танцевальная
+      </label>
+      <label>
+        <input type="radio" name="music" value="Классика">
+        Красивая классика
+      </label>
+      <label>
+        <input type="radio" name="music" value="Любимая песня">
+        Моя любимая песня
+      </label>
+    </div>
+
+    <input type="text" id="song"
+      placeholder="Название песни и исполнитель">
+  </div>
+</section>
+
+<!-- RSVP -->
+
+<section>
+  <div class="container">
+    <p class="section-label">Please respond</p>
+    <h2>Будете с нами?</h2>
+    <p class="description">
+      Пожалуйста, подтвердите своё присутствие
+      до 1 июня 2027 года.
+      Нам очень важно знать, что вы разделите
+      с нами этот счастливый день.
+    </p>
+
+    <form class="rsvp-form" id="rsvpForm">
+
+      <label>ВАШЕ ИМЯ И ФАМИЛИЯ</label>
+      <input type="text" id="guest" required
+        placeholder="Как к вам обращаться?">
+
+      <label>ПРИСУТСТВИЕ</label>
+      <select id="attendance" required>
+        <option value="">Выберите ответ</option>
+        <option>С радостью буду!</option>
+        <option>К сожалению, не смогу</option>
+      </select>
+
+      <label>КОЛИЧЕСТВО ГОСТЕЙ</label>
+      <select id="guests">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+      </select>
+
+      <label>ПОЖЕЛАНИЯ МОЛОДОЖЁНАМ</label>
+      <textarea id="message"
+        placeholder="Напишите несколько тёплых слов..."></textarea>
+
+      <button class="submit" type="submit">
+        ОТПРАВИТЬ ОТВЕТ
+      </button>
+
+      <p id="formStatus"
+        style="margin-top:20px;text-align:center;font-size:12px">
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ФИНАЛ -->
+
+<footer>
+  <p>WITH LOVE, FOREVER</p>
+  <h2>Irina & Dmitry</h2>
+  <p>20 · 06 · 2027</p>
+  <div class="flower">❦</div>
+  <p>СПАСИБО, ЧТО ВЫ ЧАСТЬ НАШЕЙ ИСТОРИИ</p>
+</footer>
+
+<script>
+// МУЗЫКА
+
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+
+musicBtn.addEventListener('click', async () => {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicBtn.textContent = '♫ Выключить музыку';
+    } catch (e) {
+      musicBtn.textContent = 'Не удалось включить музыку';
+    }
+  } else {
+    music.pause();
+    musicBtn.textContent = '♫ Включить музыку';
+  }
+});
+
+// ОБРАТНЫЙ ОТСЧЁТ
+
+const weddingDate = new Date('2027-06-20T15:00:00');
+
+function updateCountdown() {
+  const now = new Date();
+  const diff = Math.max(0, weddingDate - now);
+
+  document.getElementById('days').textContent =
+    String(Math.floor(diff / 86400000)).padStart(3, '0');
+
+  document.getElementById('hours').textContent =
+    String(Math.floor(diff / 3600000) % 24).padStart(2, '0');
+
+  document.getElementById('minutes').textContent =
+    String(Math.floor(diff / 60000) % 60).padStart(2, '0');
+
+  document.getElementById('seconds').textContent =
+    String(Math.floor(diff / 1000) % 60).padStart(2, '0');
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ОТПРАВКА RSVP
+
+document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById('guest').value,
+    attendance: document.getElementById('attendance').value,
+    guests: document.getElementById('guests').value,
+    songChoice: document.querySelector('input[name="music"]:checked')?.value || 'Не выбрано',
+    song: document.getElementById('song').value,
+    message: document.getElementById('message').value
+  };
+
+  // Пока демонстрационная отправка:
+  const text = encodeURIComponent(
+    `Свадебный ответ!\nИмя: ${data.name}\n` +
+    `Присутствие: ${data.attendance}\n` +
+    `Гостей: ${data.guests}\n` +
+    `Музыка: ${data.songChoice}\n` +
+    `Песня: ${data.song}\n` +
+    `Пожелание: ${data.message}`
+  );
+
+  document.getElementById('formStatus').textContent =
+    'Спасибо за ваш ответ! ♡';
+
+  // Для реальной отправки подключи Telegram-бота
+  // или сервис обработки форм.
+  console.log(decodeURIComponent(text));
+});
+</script>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
+
