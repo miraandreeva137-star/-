@@ -200,12 +200,6 @@ h2 em { font-weight: 400; }
   color: #8b7770;
 }
 
-.photo-section {
-  min-height: 500px;
-  background:
-    linear-gradient(rgba(48,12,21,.15), rgba(48,12,21,.4)),
-    url('hero.jpg') center / cover no-repeat;
-}
 
 .dress-palette {
   display: flex;
@@ -332,6 +326,55 @@ footer p {
   .event-time { font-size: 23px; }
   .swatch { width: 58px; height: 80px; }
 }
+/* ===== ИДЕАЛЬНАЯ АДАПТАЦИЯ ГАЛЕРЕИ ===== */
+
+.gallery-section {
+  background: #faf5ef;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Выравнивает фото строго по центру */
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;    /* Аккуратная ширина, совпадающая с текстом */
+  margin: 40px auto 0;
+  padding: 0 20px;     /* Поля по бокам, чтобы фото не касались краев экрана */
+  box-sizing: border-box;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;         /* Картинка подстраивается под ширину блока */
+  max-width: 100%;
+  height: auto;        /* Сохраняет пропорции без искажений */
+  object-fit: contain;
+  border-radius: 6px;  /* Аккуратные скругленные углы */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Легкая тень */
+  transition: transform .6s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.025);
+}
+
+.gallery-caption {
+  margin-top: 30px;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--burgundy);
+  text-align: center;
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+  .gallery {
+    gap: 15px;
+    margin-top: 25px;
+    padding: 0 20px;
+  }
+}
 </style>
 
 </head>
@@ -400,7 +443,6 @@ footer p {
   </div>
 </section>
 
-<img src="assets/gallery-1.jpg" alt="Романтический момент">
 <section class="gallery-section reveal">
   <div class="container">
     <p class="section-label">Our memories</p>
