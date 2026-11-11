@@ -229,43 +229,8 @@ input, select, textarea, button {
 /* Галерея */
 
 
-/* ===== FULL IMAGE RESPONSIVE GALLERY ===== */
 
-.gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    margin: 40px auto 0;
-}
 
-.gallery img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center;
-    border-radius: 3px;
-}
-
-/* Телефоны */
-@media (max-width: 480px) {
-    .gallery {
-        width: 100%;
-        gap: 12px;
-        margin-top: 24px;
-        padding: 0;
-    }
-
-    .gallery img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-}
 
 /* Плавные переходы */
 
@@ -413,83 +378,63 @@ button, a, .swatch {
   color: #c6a58c;
 }
 
-/* ===== MOBILE ===== */
+/* ===== ГАЛЕРЕЯ (ЕДИНЫЙ ЧИСТЫЙ СТИЛЬ) ===== */
 
-@media(max-width: 480px) {
-  .luxury-card {
-    padding: 30px 18px;
+.gallery-section {
+  background: #faf5ef;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрирует все элементы по центру экрана */
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;    /* Ограничиваем максимальную ширину на ПК, чтобы фото не были гигантскими */
+  margin: 40px auto 0;
+  padding: 0 15px;     /* Безопасные отступы по бокам для телефонов */
+  box-sizing: border-box;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;         /* Фото занимает всю доступную ширину контейнера */
+  max-width: 100%;     /* Гарантия, что не выйдет за пределы экрана */
+  height: auto;        /* Сохраняет пропорции исходной фотографии */
+  object-fit: contain; /* Картинка полностью помещается в блок без обрезки */
+  object-position: center;
+  border-radius: 4px;
+  transition: transform .6s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.025);
+}
+
+.gallery-caption {
+  margin-top: 30px;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: var(--burgundy);
+  text-align: center;
+}
+
+/* Мобильные устройства */
+@media (max-width: 480px) {
+  .gallery {
+    gap: 15px;
+    margin-top: 24px;
+    padding: 0 10px; /* Аккуратные отступы на узких экранах */
   }
 
-  .luxury-card h2 {
-    font-size: 35px;
-  }
-
-  .location-card {
-    padding: 40px 18px;
-  }
-
-  .final-quote {
-    padding: 85px 18px;
+  .gallery img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .gallery-caption {
     font-size: 8px;
     letter-spacing: 2px;
   }
-}
-/* ===== АДАПТАЦИЯ ФОТОГРАФИЙ ASSETS ===== */
-
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.gallery img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 4px;
-}
-
-/* Первая фотография крупнее */
-.gallery img:first-child {
-    grid-row: span 2;
-    aspect-ratio: 3 / 4;
-}
-
-/* Планшеты */
-@media (max-width: 768px) {
-    .gallery {
-        gap: 8px;
-    }
-
-    .gallery img {
-        aspect-ratio: 3 / 4;
-    }
-}
-
-/* Телефоны */
-@media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: 1fr 1fr;
-        gap: 6px;
-        padding: 0 12px;
-        box-sizing: border-box;
-    }
-
-    .gallery img {
-        aspect-ratio: 3 / 4;
-        border-radius: 3px;
-    }
-
-    .gallery img:first-child {
-        aspect-ratio: 2 / 3;
-    }
 }
