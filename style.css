@@ -431,3 +431,59 @@ button, a, .swatch {
     letter-spacing: 2px;
   }
 }
+/* ===== АДАПТАЦИЯ ФОТОГРАФИЙ ASSETS ===== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+}
+
+/* Первая фотография крупнее */
+.gallery img:first-child {
+    grid-row: span 2;
+    aspect-ratio: 3 / 4;
+}
+
+/* Планшеты */
+@media (max-width: 768px) {
+    .gallery {
+        gap: 8px;
+    }
+
+    .gallery img {
+        aspect-ratio: 3 / 4;
+    }
+}
+
+/* Телефоны */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        padding: 0 12px;
+        box-sizing: border-box;
+    }
+
+    .gallery img {
+        aspect-ratio: 3 / 4;
+        border-radius: 3px;
+    }
+
+    .gallery img:first-child {
+        aspect-ratio: 2 / 3;
+    }
+}
